@@ -1,7 +1,7 @@
 
 import { Wrapped, Thunk, From } from '../../types.ts'
 
-export function _Set<V>(val: Wrapped<V>, size: Wrapped<number>): Thunk<Set<V>> {
+export function New<V>(val: Wrapped<V>, size: Wrapped<number>): Thunk<Set<V>> {
   return () => {
     const data = new Set<V>()
 
