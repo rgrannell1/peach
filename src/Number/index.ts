@@ -6,7 +6,7 @@ function Uniform(from: Wrapped<number>, to: Wrapped<number>): Thunk<number> {
   const upper = From(to)
 
   return () => {
-    return (Math.random() * upper - lower) + lower
+    return (Math.random() * (upper - lower)) + lower
   }
 }
 

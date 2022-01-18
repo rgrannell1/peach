@@ -10,3 +10,7 @@ export function isThunk<T>(ctx: Wrapped<T>): ctx is Thunk<T> {
 export function From<T>(ctx: Wrapped<T>): T {
   return isThunk(ctx) ? ctx() : ctx
 }
+
+export function Compose<T, K>(source: Wrapped<T>, fn: (underlying: T) => K): Wrapped<K> {
+  return () => fn(From(source))
+}
